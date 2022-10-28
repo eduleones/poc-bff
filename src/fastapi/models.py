@@ -15,7 +15,7 @@ class Item(BaseModel):
 
 class Order(BaseModel):
     id: str
-    itens: List[Item]
+    items: List[Item]
     total: float
 
     class Config:
