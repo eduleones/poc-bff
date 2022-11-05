@@ -12,6 +12,6 @@ def make_items(quantity: int = 10) -> List[Item]:
 
 def make_orders(quantity: int = 10) -> List[Order]:
     return [
-        Order(id=str(uuid.uuid4()), itens=make_items(), total=10.0)
+        Order(id=str(uuid.uuid4()), items=make_items(), total=10.0)
         for i in range(quantity)
     ]
