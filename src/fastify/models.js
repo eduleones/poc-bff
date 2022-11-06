@@ -1,13 +1,18 @@
-const Item = {
-    id: { type: 'integer' },
-    name: { type: 'string' },
-    price: { type: 'number' },
-    quantity: { type: 'integer' },
+class ItemDto{
+    constructor(id, name, price, quantity){
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
 }
 
-
-const Order = {
-    id: { type: 'string' },
-    items: { type: 'array', items: Item },
-    total: { type: 'number' },
+class OrderDto {
+    constructor(id, items, total) {
+        this.id = id;
+        this.items = items;
+        this.total = total;
+    }
 }
+
+module.exports = { ItemDto, OrderDto }
