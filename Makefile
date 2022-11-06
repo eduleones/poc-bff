@@ -21,7 +21,11 @@ lint: _flake8 _isort _black   ## Check code lint
 format-code: _isort-fix _black_fix ## Format code
 
 run-fastapi:  ## Run FastAPI
-	@gunicorn src.fastapi.main:app -b 0.0.0.0:3000 --keep-alive 5 --preload -k uvicorn.workers.UvicornWorker --workers 1 --log-level debug
+	@gunicorn src.fastapi.main:app -b 0.0.0.0:3000 --keep-alive 5 --preload -k uvicorn.workers.UvicornWorker --workers 4 --log-level debug
 
 run-fastify:  ## Run Fastify
 	@node src/fastify/server
+
+
+run-load-test:  ## Run load test
+	@k6 run load-test.js
